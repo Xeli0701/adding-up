@@ -49,8 +49,8 @@ rl.on('close', () => {
      * 整形する
      * ここで出るmap関数はMapとは別物で「Array内部の要素それぞれに与えられた関数を適用した内容に変換」と言うもの
      */
-    const rankingStrings = rankingArray.map(([key,value]) => {
-        return key + ': ' + value.popu10 + '=>' + value.popu15 + ' 変化率:' + value.change;
+    const rankingStrings = rankingArray.map(([key,value],i) => {
+        return (i+1) + "位 " + key + ': ' + value.popu10 + '=>' + value.popu15 + ' 変化率:' + value.change;
     });
     console.log(rankingStrings);
 });
